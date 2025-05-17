@@ -1,0 +1,31 @@
+export const ROLES = {
+  ADMIN: 'admin',
+  MANAGER: 'manager',
+  USER: 'user',
+  GUEST: 'guest',
+}
+
+
+export const PERMISSIONS = {
+  VIEW_DASHBOARD: 'view_dashboard',
+  VIEW_PRODUCT: 'view_product',
+  EDIT_PRODUCT: 'edit_product',
+  DELETE_PRODUCT: 'delete_product',
+}
+
+
+export const ROLE_PERMISSIONS: Record<string, string[]>  = {
+  [ROLES.ADMIN]: [
+    PERMISSIONS.VIEW_DASHBOARD,
+    PERMISSIONS.VIEW_PRODUCT,
+    PERMISSIONS.EDIT_PRODUCT,
+    PERMISSIONS.DELETE_PRODUCT,
+  ],
+  [ROLES.MANAGER]: [
+    PERMISSIONS.VIEW_DASHBOARD,
+    PERMISSIONS.VIEW_PRODUCT,
+    PERMISSIONS.EDIT_PRODUCT,
+  ],
+  [ROLES.USER]: [PERMISSIONS.VIEW_DASHBOARD, PERMISSIONS.VIEW_PRODUCT],
+  [ROLES.GUEST]: [PERMISSIONS.VIEW_PRODUCT],
+}
