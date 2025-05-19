@@ -1,10 +1,14 @@
-import React from 'react'
+import { RouterProvider } from '@tanstack/react-router'
+import router from './router'
+import { AuthProvider } from './context/AuthContext'
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline bg-blue-400">Hello Guys Welcome To React</h1>
-    </div>
+    <>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </>
   )
 }
 

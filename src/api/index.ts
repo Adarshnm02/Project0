@@ -19,6 +19,11 @@ export const loginUser = async (username: string, password: string) => {
                 password
             }
         });
+        if(response.data.length === 0){
+            alert("Invalid username or password");
+            return null;
+        }
+        
         return response.data[0] || null;
     }catch (error) {
         console.error("Error logging in:", error);
